@@ -3,6 +3,7 @@
 import React, { Component } from "react";
 // Component Imports
 import Navbar from "./components/layout/Navbar";
+import UserItem from "./components/users/UserItem";
 // Styles Imports
 import "./App.css";
 
@@ -11,7 +12,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar title='Github Finder' />
+        <Navbar />
+        <UserItem />
       </div>
     );
   }
