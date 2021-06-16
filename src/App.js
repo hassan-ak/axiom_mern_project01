@@ -3,7 +3,7 @@
 import React, { Component } from "react";
 // Component Imports
 import Navbar from "./components/layout/Navbar";
-import UserItem from "./components/users/UserItem";
+import Users from "./components/users/Users";
 // Styles Imports
 import "./App.css";
 
@@ -13,7 +13,9 @@ class App extends Component {
     return (
       <div>
         <Navbar />
-        <UserItem />
+        <div className='container'>
+          <Users />
+        </div>
       </div>
     );
   }
