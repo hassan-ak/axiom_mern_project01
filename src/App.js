@@ -11,18 +11,23 @@ import "./App.css";
 
 // App component using Class
 class App extends Component {
+  // State to store data from the Api call
+  state = {
+    users: [],
+    loading: false,
+  };
   // This function execute when ever the component renders
-  componentDidMount() {
-    axios
-      .get("https://api.github.com/users")
-      .then((res) => console.log(res.data));
+  async componentDidMount() {
+    this.setState({ loading: true });
+    const res = await axios.get("https://api.github.com/users");
+    this.setState({ users: res.data, loading: false });
   }
   render() {
     return (
       <div>
         <Navbar />
         <div className='container'>
-          <Users />
+          <Users loading={this.state.loading} users={this.state.users} />
         </div>
       </div>
     );
